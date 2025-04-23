@@ -1,0 +1,50 @@
+{
+    "0001.mp4": {
+        "label": "FAKE"
+    },
+    "0002.mp4": {
+        "label": "REAL"
+    },
+    "0003.mp4": {
+        "label": "REAL"
+    },
+    "0004.mp4": {
+        "label": "FAKE"
+    },
+    "0005.mp4": {
+        "label": "FAKE"
+    },
+    "0006.mp4": {
+        "label": "REAL"
+    },
+    "0007.mp4": {
+        "label": "REAL"
+    },
+    "0008.mp4": {
+        "label": "FAKE"
+    },
+    "0009.mp4": {
+        "label": "REAL"
+    },
+    "0010.mp4": {
+        "label": "FAKE"
+    },
+    "0011.mp4": {
+        "label": "FAKE"
+    },
+    "0012.mp4": {
+        "label": "REAL"
+    },
+    "0013.mp4": {
+        "label": "FAKE"
+    },
+    "0014.mp4": {
+        "label": "REAL"
+    },
+    "0015.mp4": {
+        "label": "REAL"
+    },
+    "0016.mp4": {
+        "label": "REAL"
+    }
+}
