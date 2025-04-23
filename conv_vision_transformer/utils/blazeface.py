@@ -10,9 +10,6 @@ class BlazeBlock(nn.Module):
 
         self.stride = stride
         self.channel_pad = out_channels - in_channels
-
-        # TFLite uses slightly different padding than PyTorch
-        # on the depthwise conv layer when the stride is 2.
         if stride == 2:
             self.max_pool = nn.MaxPool2d(kernel_size=stride, stride=stride)
             padding = 0

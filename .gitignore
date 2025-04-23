@@ -1,5 +1,6 @@
 __pycache__/
 .vscode/
 cvit-env/
+saved_model/
 *.pth
 *.pkl

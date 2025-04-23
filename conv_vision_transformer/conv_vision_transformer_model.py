@@ -5,8 +5,6 @@ from einops import rearrange
 
 
 class Residual(nn.Module):
-    """Residual connection wrapper for a given function."""
-
     def __init__(self, fn: nn.Module):
         super().__init__()
         self.fn = fn
@@ -16,8 +14,6 @@ class Residual(nn.Module):
 
 
 class PreNorm(nn.Module):
-    """Applies LayerNorm before passing input to the given function."""
-
     def __init__(self, dim: int, fn: nn.Module):
         super().__init__()
         self.norm = nn.LayerNorm(dim)
@@ -28,8 +24,6 @@ class PreNorm(nn.Module):
 
 
 class FeedForward(nn.Module):
-    """Feed-forward network used in Transformer blocks."""
-
     def __init__(self, dim: int, hidden_dim: int):
         super().__init__()
         self.net = nn.Sequential(nn.Linear(dim, hidden_dim), nn.GELU(), nn.Linear(hidden_dim, dim))
@@ -39,8 +33,6 @@ class FeedForward(nn.Module):
 
 
 class Attention(nn.Module):
-    """Multi-head self-attention mechanism."""
-
     def __init__(self, dim: int, num_heads: int = 8):
         super().__init__()
         self.num_heads = num_heads
@@ -71,8 +63,6 @@ class Attention(nn.Module):
 
 
 class Transformer(nn.Module):
-    """Stack of Transformer blocks."""
-
     def __init__(self, dim: int, depth: int, num_heads: int, mlp_dim: int):
         super().__init__()
         self.layers = nn.ModuleList([nn.ModuleList([Residual(PreNorm(dim, Attention(dim, num_heads=num_heads))), Residual(PreNorm(dim, FeedForward(dim, mlp_dim)))]) for _ in range(depth)])
@@ -85,11 +75,6 @@ class Transformer(nn.Module):
 
 
 class CViT(nn.Module):
-    """
-    Convolutional Vision Transformer (CViT) for image classification.
-    Combines CNN feature extraction with Vision Transformer blocks.
-    """
-
     def __init__(self, image_size: int = 224, patch_size: int = 7, num_classes: int = 2, cnn_channels: int = 512, transformer_dim: int = 1024, transformer_depth: int = 6, transformer_heads: int = 8, transformer_mlp_dim: int = 2048):
         super().__init__()
         assert image_size % patch_size == 0, "image dimensions must be divisible by the patch size"
@@ -176,7 +161,7 @@ class CViT(nn.Module):
         batch_size = features.shape[0]
         class_tokens = self.cls_token.expand(batch_size, -1, -1)
         tokens = torch.cat((class_tokens, patch_embeddings), 1)
-        tokens += self.pos_embedding[:, :tokens.size(1)]
+        tokens += self.pos_embedding[:, : tokens.size(1)]
         transformer_output = self.transformer(tokens, mask)
         cls_output = self.to_cls_token(transformer_output[:, 0])
         return self.mlp_head(cls_output)
