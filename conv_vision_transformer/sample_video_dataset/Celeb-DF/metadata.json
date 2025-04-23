@@ -1,0 +1,32 @@
+{
+    "id0_id1_0000.mp4": {
+        "label": "FAKE"
+    },
+    "id4_id2_0008.mp4": {
+        "label": "FAKE"
+    },
+    "id17_id3_0003.mp4": {
+        "label": "FAKE"
+    },
+    "00037.mp4": {
+        "label": "REAL"
+    },
+    "id0_0000.mp4": {
+        "label": "REAL"
+    },
+    "id1_0000.mp4": {
+        "label": "REAL"
+    },
+    "id2_0001.mp4": {
+        "label": "REAL"
+    },
+    "id3_0001.mp4": {
+        "label": "REAL"
+    },
+    "id4_0008.mp4": {
+        "label": "REAL"
+    },
+    "id17_0003.mp4": {
+        "label": "REAL"
+    }
+}
