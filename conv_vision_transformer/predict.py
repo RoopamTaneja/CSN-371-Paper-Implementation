@@ -124,10 +124,10 @@ def evaluate_metrics(filenames, predictions, metadata_path):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Prediction")
     parser.add_argument("--model-path", type=str, required=True, help="Path to the trained model .pth file")
-    parser.add_argument("--data-dir", type=str, default="prediction_data/", help="Directory containing videos and metadata.json")
+    parser.add_argument("--dir", "-d", type=str, required=True, help="Directory containing videos and metadata.json")
     args = parser.parse_args()
 
-    SAMPLE_DIR = args.data_dir 
+    SAMPLE_DIR = args.dir
 
     model = CViT(image_size=FRAME_SIZE, patch_size=7, num_classes=2, cnn_channels=512, transformer_dim=1024, transformer_depth=6, transformer_heads=8, transformer_mlp_dim=2048).to(DEVICE)
     checkpoint = torch.load(args.model_path, map_location=DEVICE)

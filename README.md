@@ -79,8 +79,19 @@ python predict.py --model-path <path_to_model> -d <path_to_prediction_data>
 
 **Example:**
 ```bash
-python predict.py --model-path saved_model/trained_model.pth
+python predict.py --model-path saved_model/trained_model.pth -d prediction_data/
 ```
+
+The prediction results are printed as well as stored in a csv file. Accuracy, log loss and AUC score are also calculated and printed.
 
 ---
 
+For demonstrating how faces are being extracted from videos for input to the model, we have included a sample video dataset.
+
+The functionality can be tested by running the `process_videos.py` script. 
+
+```bash
+python process_videos.py
+```
+
+---
