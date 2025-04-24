@@ -20,6 +20,7 @@ Tested and run on Ubuntu (WSL).
 │   ├── sample_video_dataset/ # Sample from video dataset
 │   ├── train.py # Training script
 │   ├── training_data/ # Portion of training dataset
+|   ├── logs/ # Training and testing statistics
 │   └── utils/ # Utility scripts
 ├── README.md
 └── requirements.txt
@@ -57,7 +58,7 @@ python train.py -d <path_to_training_data> -e <num_epochs>
 
 `-e`: Number of epochs (default: 1)
 
-Example :
+**Example** :
 
 ```bash
 python train.py -d training_data/ -e 10
@@ -77,7 +78,8 @@ python predict.py --model-path <path_to_model> -d <path_to_prediction_data>
 
 `-d`: Path to the prediction data directory (required). It should have a `metadata.json` file.
 
-**Example:**
+**Example** :
+
 ```bash
 python predict.py --model-path saved_model/trained_model.pth -d prediction_data/
 ```
@@ -93,5 +95,19 @@ The functionality can be tested by running the `process_videos.py` script.
 ```bash
 python process_videos.py
 ```
+
+---
+
+**Key Python packages used** :
+
+- Pytorch
+- face_recognition
+- Blazeface
+- OpenCV
+- torchvision
+- albumentations
+- PIL
+- Scikit-learn
+- Numpy
 
 ---
