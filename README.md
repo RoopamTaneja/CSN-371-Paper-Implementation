@@ -88,7 +88,7 @@ The prediction results are printed as well as stored in a csv file. Accuracy, lo
 
 ---
 
-For demonstrating how faces are being extracted from videos for input to the model, we have included a sample video dataset.
+For demonstrating how faces are being extracted from videos for input to the model, a sample video dataset has been included.
 
 The functionality can be tested by running the `process_videos.py` script. 
 
