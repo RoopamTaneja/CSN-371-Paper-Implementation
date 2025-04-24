@@ -20,7 +20,7 @@ Tested and run on Ubuntu (WSL).
 │   ├── sample_video_dataset/ # Sample from video dataset
 │   ├── train.py # Training script
 │   ├── training_data/ # Portion of training dataset
-|   ├── logs/ # Training and testing statistics
+│   ├── logs/ # Training and testing statistics
 │   └── utils/ # Utility scripts
 ├── README.md
 └── requirements.txt
