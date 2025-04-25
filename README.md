@@ -23,6 +23,8 @@ Tested and run on Ubuntu (WSL).
 │   ├── logs/ # Training and testing statistics
 │   └── utils/ # Utility scripts
 ├── README.md
+├── Report
+├── Presentation
 └── requirements.txt
 ```
 
